@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script>
+        if (!sessionStorage.getItem('navigated')) {
+            // Если сессия только началась, кидаем на главную
+            if (window.location.pathname.endsWith('index.html') === false && window.location.pathname !== '/') {
+                sessionStorage.setItem('navigated', 'true');
+                window.location.replace('index.html');
+            }
+        } else {
+            // Если пользователь уже кликает по ссылкам внутри сайта, разрешаем открывать другие страницы
+            sessionStorage.setItem('navigated', 'true');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости - Содружество-Альфа</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 15px;">
+            <img src="logo.png" alt="Логотип Юнармии" class="logo-icon">
+            <div class="logo-text">
+                <h1>СОДРУЖЕСТВО-АЛЬФА</h1>
+                <p>Отряд ЮНАРМИИ</p>
+            </div>
+        </a>
+        
+        <!-- Кнопка бургер -->
+        <button class="burger-menu" id="burgerMenu" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Навигация (не забудь поставить класс active на нужную страницу!) -->
+        <nav id="mainNav">
+            <a href="index.html">Главная</a>
+            <a href="about.html">О нас</a>
+            <a href="news.html" class="active">Новости</a>
+            <a href="creators.html">Создатели</a>
+            <a href="achievements.html">Наши достижения</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <div class="content-box">
+            <h1>Новости отряда</h1>
+            
+            <div class="news-feed">
+                
+                <!-- НОВОСТЬ 1 (6 ноября 2026) -->
+                <article class="news-item">
+                    <div class="news-content">
+                        <div class="news-header">
+                            <span class="news-author">Содружество-Альфа</span>
+                            <span>•</span>
+                            <span>6 ноября 2026</span>
+                        </div>
+                        <a href="news1.html" class="news-link">
+                            <h3 class="news-title">Торжественный марш в честь парада 1941 года</h3>
+                            <p class="news-desc">Наш отряд в составе 17 человек принял участие в торжественном марше, посвященном легендарному параду 7 ноября 1941 года. Ребята достойно представили Салютный дивизион и почтили память героев.</p>
+                        </a>
+                        <div class="news-meta">
+                        </div>
+                    </div>
+                    <a href="news1.html" class="news-image-link">
+                        <img src="news1.jpg" alt="Марш" class="news-image">
+                    </a>
+                </article>
+
+                <!-- НОВОСТЬ 2 (31 октября 2026) -->
+                <article class="news-item">
+                    <div class="news-content">
+                        <div class="news-header">
+                            <span class="news-author">Содружество-Альфа</span>
+                            <span>•</span>
+                            <span>31 октября 2026</span>
+                        </div>
+                        <a href="news2.html" class="news-link">
+                            <h3 class="news-title">Сдача «Юнармейского норматива»</h3>
+                            <p class="news-desc">В Колледже полиции прошел комплекс норм подготовки. 5 наших юнармейцев сдали нормативы, еще 2 выступили в качестве зрителей и группы поддержки. Отличная работа!</p>
+                        </a>
+                        <div class="news-meta">
+                        </div>
+                    </div>
+                    <a href="news2.html" class="news-image-link">
+                        <img src="news2.jpg" alt="Нормативы" class="news-image">
+                    </a>
+                </article>
+
+                <!-- НОВОСТЬ 3 (17 октября 2026) -->
+                <article class="news-item">
+                    <div class="news-content">
+                        <div class="news-header">
+                            <span class="news-author">Содружество-Альфа</span>
+                            <span>•</span>
+                            <span>17 октября 2026</span>
+                        </div>
+                        <a href="news3.html" class="news-link">
+                            <h3 class="news-title">Закрытие «Вахты памяти»</h3>
+                            <p class="news-desc">12 юнармейцев нашего отряда приняли участие в торжественной церемонии закрытия «Вахты памяти» в деревне Кузовлево. Мы гордимся возможностью отдать дань уважения павшим героям.</p>
+                        </a>
+                        <div class="news-meta">
+                        </div>
+                    </div>
+                    <a href="news3.html" class="news-image-link">
+                        <img src="news3.jpg" alt="Вахта памяти" class="news-image">
+                    </a>
+                </article>
+
+                <!-- НОВОСТЬ 4 (15 октября 2026) -->
+                <article class="news-item">
+                    <div class="news-content">
+                        <div class="news-header">
+                            <span class="news-author">Содружество-Альфа</span>
+                            <span>•</span>
+                            <span>15 октября 2026</span>
+                        </div>
+                        <a href="news4.html" class="news-link">
+                            <h3 class="news-title">Триумф на Всероссийском форуме «Альфовец»</h3>
+                            <p class="news-desc">Наша команда приняла участие во Всероссийском форуме «Альфовец». В 2025 году мы завоевали 1 место, а в 2026 году юнармеец Валуева Яна стала лучшей в личном зачёте среди девушек. Гордимся нашими ребятами!</p>
+                        </a>
+                        <div class="news-meta">
+                        </div>
+                    </div>
+                    <a href="news4.html" class="news-image-link">
+                        <img src="news4.jpg" alt="Форум Альфовец" class="news-image">
+                    </a>
+                </article>
+
+                <!-- НОВОСТЬ 5 (20 сентября 2026) -->
+                <article class="news-item">
+                    <div class="news-content">
+                        <div class="news-header">
+                            <span class="news-author">Содружество-Альфа</span>
+                            <span>•</span>
+                            <span>20 сентября 2026</span>
+                        </div>
+                        <a href="news5.html" class="news-link">
+                            <h3 class="news-title">Серебро на слёте «Кубок Единства»</h3>
+                            <p class="news-desc">19 сентября наш отряд принял участие в слёте «Кубок Единства». По итогам соревнований в 2025 году нашей командой было завоёвано почётное 2 место. Отличный результат и бесценный опыт для наших юнармейцев!</p>
+                        </a>
+                        <div class="news-meta">
+                        </div>
+                    </div>
+                    <a href="news5.html" class="news-image-link">
+                        <img src="news5.jpg" alt="Кубок Единства" class="news-image">
+                    </a>
+                </article>
+
+                <!-- НОВОСТЬ 6 (10 июня 2026) -->
+                <article class="news-item">
+                    <div class="news-content">
+                        <div class="news-header">
+                            <span class="news-author">Содружество-Альфа</span>
+                            <span>•</span>
+                            <span>10 июня 2026</span>
+                        </div>
+                        <a href="news6.html" class="news-link">
+                            <h3 class="news-title">Бронза на слёте «Девушки в погонах»</h3>
+                            <p class="news-desc">На региональном слёте «Девушки в погонах» наша команда достойно представила отряд и завоевала 3 место в 2026 году. Девушки показали отличную строевую подготовку, волю к победе и настоящий командный дух!</p>
+                        </a>
+                        <div class="news-meta">
+                        </div>
+                    </div>
+                    <a href="news6.html" class="news-image-link">
+                        <img src="news6.jpg" alt="Девушки в погонах" class="news-image">
+                    </a>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        ЮНАРМИЯ ★ СОДРУЖЕСТВО-АЛЬФА ★ ПОКА МЫ ЕДИНЫ — МЫ НЕПОБЕДИМЫ
+    </footer>
+            <script>
+        const burger = document.getElementById('burgerMenu');
+        const nav = document.getElementById('mainNav');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+
+        // Закрываем меню при клике на ссылку
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                burger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+       <script>
+        if (!sessionStorage.getItem('navigated')) {
+            // Если сессия только началась, кидаем на главную
+            if (window.location.pathname.endsWith('index.html') === false && window.location.pathname !== '/') {
+                sessionStorage.setItem('navigated', 'true');
+                window.location.replace('index.html');
+            }
+        } else {
+            // Если пользователь уже кликает по ссылкам внутри сайта, разрешаем открывать другие страницы
+            sessionStorage.setItem('navigated', 'true');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Содружество-Альфа</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 15px;">
+            <img src="logo.png" alt="Логотип Юнармии" class="logo-icon">
+            <div class="logo-text">
+                <h1>СОДРУЖЕСТВО-АЛЬФА</h1>
+                <p>Отряд ЮНАРМИИ</p>
+            </div>
+        </a>
+        
+        <!-- Кнопка бургер -->
+        <button class="burger-menu" id="burgerMenu" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Навигация (не забудь поставить класс active на нужную страницу!) -->
+        <nav id="mainNav">
+            <a href="index.html">Главная</a>
+            <a href="about.html">О нас</a>
+            <a href="news.html" class="active">Новости</a>
+            <a href="creators.html">Создатели</a>
+            <a href="achievements.html">Наши достижения</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <div class="content-box">
+            <h1>Контакты</h1>
+            
+            <div style="font-size: 16px; line-height: 2; color: #333;">
+                <p style="margin-bottom: 10px;"><strong>Телефон:</strong> <a href="tel:+79528161919" style="color: var(--main-red); text-decoration: none; font-weight: 700;">+7 (952) 816-19-19</a></p>
+                
+                <p style="margin-bottom: 10px;"><strong>Email:</strong> <a href="mailto:artmry367@gmail.com" style="color: var(--main-red); text-decoration: none; font-weight: 700;">artmry367@gmail.com</a></p>
+                
+                <p style="margin-bottom: 10px;"><strong>Адрес школы:</strong> ГБОУ школа 1392 им. Д. В. Рябинкина, ОПШ 1</p>
+                
+                <p style="margin-bottom: 10px;"><strong>Телеграм-канал:</strong> <a href="https://t.me/Alpha_Druzhina" target="_blank" style="color: var(--main-red); text-decoration: none; font-weight: 700;">t.me/Alpha_Druzhina</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        ЮНАРМИЯ ★ СОДРУЖЕСТВО-АЛЬФА ★ ПОКА МЫ ЕДИНЫ — МЫ НЕПОБЕДИМЫ
+    </footer>
+            <script>
+        const burger = document.getElementById('burgerMenu');
+        const nav = document.getElementById('mainNav');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+
+        // Закрываем меню при клике на ссылку
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                burger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+       <script>
+        if (!sessionStorage.getItem('navigated')) {
+            // Если сессия только началась, кидаем на главную
+            if (window.location.pathname.endsWith('index.html') === false && window.location.pathname !== '/') {
+                sessionStorage.setItem('navigated', 'true');
+                window.location.replace('index.html');
+            }
+        } else {
+            // Если пользователь уже кликает по ссылкам внутри сайта, разрешаем открывать другие страницы
+            sessionStorage.setItem('navigated', 'true');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши достижения - Содружество-Альфа</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 15px;">
+            <img src="logo.png" alt="Логотип Юнармии" class="logo-icon">
+            <div class="logo-text">
+                <h1>СОДРУЖЕСТВО-АЛЬФА</h1>
+                <p>Отряд ЮНАРМИИ</p>
+            </div>
+        </a>
+        
+        <!-- Кнопка бургер -->
+        <button class="burger-menu" id="burgerMenu" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Навигация (не забудь поставить класс active на нужную страницу!) -->
+        <nav id="mainNav">
+            <a href="index.html">Главная</a>
+            <a href="about.html">О нас</a>
+            <a href="news.html" class="active">Новости</a>
+            <a href="creators.html">Создатели</a>
+            <a href="achievements.html">Наши достижения</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <div class="content-box">
+            <h1>Наши достижения</h1>
+            
+            <ol style="font-size: 16px; line-height: 1.8; color: #333; padding-left: 20px;">
+                <!-- Старые достижения (общие) -->
+                <li style="margin-bottom: 15px;">Участие в форуме «Мы вместе. Своих не бросаем.» в 2024 году.</li>
+                
+                <li style="margin-bottom: 15px;">Организация и проведение акции «Лента Памяти», посвященной Дню Победы в 2024, 2025 и 2026 годах.</li>
+                
+                <li style="margin-bottom: 15px;">Организация многочисленных парадов для ветеранов Великой Отечественной Войны в 2024, 2025 и 2026 годах.</li>
+                
+                <li style="margin-bottom: 15px;">Участие в передаче Знамени Победы в сентябре 2024 года.</li>
+                
+                <li style="margin-bottom: 15px;">Участие в конференции «"Альфа" на службе Родине» с майором Геннадием Николаевичем Зайцевым.</li>
+                
+                <li style="margin-bottom: 15px;">Организация показательного выступления с элементами тактической подготовки и рукопашного боя, в 2025 (трижды) и 2026 годах.</li>
+                
+                <li style="margin-bottom: 15px;">Участие в региональных слётах «Честь имею!» и «Девушки в погонах» в 2024, 2025 и 2026 годах. В 2026 году на слёте «Девушки в погонах» наша команда завоевала <strong>3 место</strong>.</li>
+                
+                <li style="margin-bottom: 15px;">Участие во всероссийском форуме «Альфовец» в 2025 и 2026 годах. В 2025 году наша команда завоевала <strong>1 место</strong>, а в 2026 юнармеец Валуева Яна стала лучшей в личном зачёте среди девушек.</li>
+                
+                <li style="margin-bottom: 15px;">Участие в слёте «Кубок Единства» (19 сентября) в 2025 и в 2026 годах. В 2025 году нашей командой было завоёвано <strong>2 место</strong>.</li>
+                
+                <li style="margin-bottom: 15px;">Организация Курса Молодого Бойца для новобранцев нашего отряда в 2026 году.</li>
+
+                <!-- Новые детализированные мероприятия по датам -->
+                <li style="margin-bottom: 15px;">Участие в торжественной церемонии, посвященной Дню Государственного флага Российской Федерации — 21 августа 2026 года.</li>
+                
+                <li style="margin-bottom: 15px;">Участие в торжественной церемонии поднятия флага на мероприятии, посвященном Дню Знаний — 1 сентября 2026 года.</li>
+                
+                <li style="margin-bottom: 15px;">Участие в мероприятии, посвященном 90-летию военного гарнизона — 4 сентября 2026 года.</li>
+                
+                <li style="margin-bottom: 15px;">Участие в торжественном концерте, посвященном Дню воинской части — 4 сентября 2026 года.</li>
+                
+                <li style="margin-bottom: 15px;">Участие в мероприятии «Большой разговор о важном с Дмитрием Саблиным» — 10 сентября 2026 года.</li>
+                
+                <li style="margin-bottom: 15px;">Участие в Московском слете активистов движения первых — 12 сентября 2026 года.</li>
+                
+                <li style="margin-bottom: 15px;">Участие в праздничном мероприятии, посвященном 80-летию ГБОУ Школа №1392 им. Д.В. Рябинкина — 2 октября 2026 года.</li>
+                
+                <li style="margin-bottom: 15px;">Участие во Всероссийской игре «Семейная зарница» — 10 октября 2026 года.</li>
+                
+                <li style="margin-bottom: 15px;">Участие во Всероссийском конкурсе «Лица Юнармии» — 12 октября 2026 года.</li>
+                
+                <li style="margin-bottom: 15px;">Участие в торжественном митинге, приуроченном к открытию Марафона «Равнения на Дмитрия Рябинкина» — 13 октября 2026 года.</li>
+                
+                <li style="margin-bottom: 15px;">Участие в торжественном мероприятии, посвященном открытию Марафона «Равнения на Дмитрия Рябинкина» — 14 октября 2026 года.</li>
+                
+                <li style="margin-bottom: 15px;">Участие в торжественной церемонии закрытия «Вахты памяти» — 17 октября 2026 года.</li>
+                
+                <li style="margin-bottom: 15px;">Проведение мастер-классов для отрядов из других корпусов нашей школы — 27 октября 2026 года.</li>
+                
+                <li style="margin-bottom: 15px;">Участие в комплексе норм подготовки «Юнармейский норматив» — 31 октября 2026 года.</li>
+                
+                <li style="margin-bottom: 15px;">Участие в торжественном марше, посвященном параду 7 ноября 1941 года — 6 ноября 2026 года.</li>
+            </ol>
+        </div>
+    </main>
+
+    <footer>
+        ЮНАРМИЯ ★ СОДРУЖЕСТВО-АЛЬФА ★ ПОКА МЫ ЕДИНЫ — МЫ НЕПОБЕДИМЫ
+    </footer>
+            <script>
+        const burger = document.getElementById('burgerMenu');
+        const nav = document.getElementById('mainNav');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+
+        // Закрываем меню при клике на ссылку
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                burger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

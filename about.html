@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+        <!-- Этот скрипт перенаправляет на главную, если страницу открыли напрямую -->
+    <script>
+        if (!sessionStorage.getItem('navigated')) {
+            // Если сессия только началась, кидаем на главную
+            if (window.location.pathname.endsWith('index.html') === false && window.location.pathname !== '/') {
+                sessionStorage.setItem('navigated', 'true');
+                window.location.replace('index.html');
+            }
+        } else {
+            // Если пользователь уже кликает по ссылкам внутри сайта, разрешаем открывать другие страницы
+            sessionStorage.setItem('navigated', 'true');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нашем отряде - Содружество-Альфа</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 15px;">
+            <img src="logo.png" alt="Логотип Юнармии" class="logo-icon">
+            <div class="logo-text">
+                <h1>СОДРУЖЕСТВО-АЛЬФА</h1>
+                <p>Отряд ЮНАРМИИ</p>
+            </div>
+        </a>
+        
+        <!-- Кнопка бургер -->
+        <button class="burger-menu" id="burgerMenu" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Навигация (не забудь поставить класс active на нужную страницу!) -->
+        <nav id="mainNav">
+            <a href="index.html">Главная</a>
+            <a href="about.html">О нас</a>
+            <a href="news.html" class="active">Новости</a>
+            <a href="creators.html">Создатели</a>
+            <a href="achievements.html">Наши достижения</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <div class="content-box">
+            <h1>О нашем отряде</h1>
+            
+            <div style="font-size: 16px; line-height: 1.8; color: #333; text-align: justify;">
+                <p style="margin-bottom: 15px;">
+                    Наш отряд был основан в 2022 году под руководством <strong>Аблакулова Маруфджона</strong>. В качестве первого координатора выступал <strong>Газизов Ринат Рашидович</strong>.
+                </p>
+                <p style="margin-bottom: 15px;">
+                    Отряд неоднократно ездил и продолжает ездить на различные слёты и торжественные мероприятия, часто занимая призовые места. 
+                </p>
+                <p style="margin-bottom: 15px;">
+                    В 2024 году координатором отряда стала <strong>Журавель Юлия Олеговна</strong>, и занимает данный пост по сей день. 
+                </p>
+                <p>
+                    В середине 2026 года командиром отряда стал <strong>Алимов Сергей Васильевич</strong>, пост его заместителя занимает <strong>Рыльков Артём Максимович</strong>.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        ЮНАРМИЯ ★ СОДРУЖЕСТВО-АЛЬФА ★ ПОКА МЫ ЕДИНЫ — МЫ НЕПОБЕДИМЫ
+    </footer>
+            <script>
+        const burger = document.getElementById('burgerMenu');
+        const nav = document.getElementById('mainNav');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+
+        // Закрываем меню при клике на ссылку
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                burger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
